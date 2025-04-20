@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Contacto</title>
+</head>
+
+<body>
+
+  <!-- Navegación -->
+  <nav class="botonera">
+    <a href="index.html" class="boton">home</a>
+    <a href="avisos.html" class="boton">avisos</a>
+    <a href="sobremi.html" class="boton active">sobre mí</a>
+    <a href="materias2025.html" class="boton">materias 2025</a>
+    <a href="contacto.html" class="boton">contacto</a>
+  </nav>
+
+  <!-- Encabezado principal -->
+  <header>
+    <h1>Contactame</h1>
+  </header>
+
+  <main>
+    <section class="avisos">
+        <form action="/action_page.php" class="contact-form">
+            <div class="input-group">
+                <label for="fname">Nombre</label>
+                <input type="text" id="fname" name="fname" placeholder="Escribí tu nombre">
+            </div>
+
+            <div class="input-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="text" id="email" name="email" placeholder="Escribí tu correo electrónico">
+            </div>
+
+            <div class="input-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Escribí el asunto por el cual te contactás">              
+          </div>
+
+            <div class="input-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="6" placeholder="Escribí tu mensaje aquí"></textarea>
+            </div>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</main>
+  <!-- Pie de página -->
+  <footer>
+    Curso 521046 || Profesora Patricia Litovicius
+    ➡️<a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
+    ➡️<a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
+  </footer>
+
+</body>
+</html>
