@@ -7,12 +7,12 @@
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
 
-  <title>Avisos</title>
+  <title>Home</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
   <!-- Navegación -->
   <nav class="botonera">
     <a href="index.html" class="boton">home</a>
-    <a href="avisos.html" class="boton active">avisos</a>
+    <a href="avisos.html" class="boton">avisos</a>
     <a href="sobremi.html" class="boton">sobre mí</a>
     <a href="materias2025.html" class="boton">materias 2025</a>
     <a href="contacto.html" class="boton">contacto</a>
@@ -28,67 +28,47 @@
 
   <!-- Encabezado principal -->
   <header>
-    <h1>Avisos</h1>
+    <h1>Home</h1>
   </header>
-  <h2>Tareas Pendientes</h2>
-  <h4>En esta sección se detallan las actividades y entregas correspondientes a cada asignatura, con sus respectivas fechas y requerimientos.
-Es importante realizar un seguimiento continuo de estas tareas para cumplir con los objetivos académicos establecidos. La organización y la planificación son fundamentales para mantener el ritmo de cursada propuesto por la institución.</h4>
+
+  <!-- Contenido principal -->
   <main>
-      <!-- Secciones por materias -->
-    <section class="avisos">
-      <div class="materia">
-        <h3>Diseño y Desarrollo Web</h3>
-        <h4>UVA 1 - Introducción al desarrollo web</h4>
-        <ul>
-          <li>10/03 - <a href="https://analiafascie.github.io/actividad1/" target="_blank">Ejercicio Sobre Mí </a></li>        
-          <li>17/03 - <a href="https://analiafascie.github.io/actividad2.v2/" target="_blank">Ejercicio HTML Etiquetas</a></li>  
-          <li>31/03 - <a href="https://analiafascie.github.io/actividad3/" target="_blank">Ejercicio Integrador</a></li>
-        </ul>
-        <h4>UVA 2 - Diseño de interfaz y Experiencia de Uusario</h4>
-        <ul>
-          <li>07/04 - <a href="https://analiafascie.github.io/actividad4/" target="_blank">Ejercicio Formato de Texto</a></li>
-          <li>07/04 - <a href="https://analiafascie.github.io/actividad5/" target="_blank">Ejercicio Formato de Cajas</a></li>
+    <div class="contenedor-cubos">
 
-        </ul>
+      <!-- Caja única centrada -->
+      <div class="cubo grande">
+        <h2>Materias en curso</h2>
+        <p>Durante el primer trimestre de 2025, se cursan las siguientes asignaturas, cada una con su correspondiente día, horario y modalidad. 
+          Estas asignaturas forman parte del trayecto académico establecido y contribuyen al desarrollo de competencias fundamentales.</p>
+        <table class="tabla-cuadricula">
+          <thead>
+            <tr>
+              <th>Materia</th>
+              <th>Día y horario</th>
+              <th>Modalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diseño y Desarrollo Web</td>
+              <td>Lunes 18:30</td>
+              <td>Virtual - Teams</td>
+            </tr>
+            <tr>
+              <td>Introducción a la Informática</td>
+              <td>Martes 18:30</td>
+              <td>Virtual - Teams</td>
+            </tr>
+            <tr>
+              <td>Arquitectura de Computadores</td>
+              <td>Miércoles 18:30</td>
+              <td>Virtual - Teams</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="materia">
-        <h3>Introducción a la Informática</h3>
-        <h4>UVA 2 - Programación Estructurada</h4>
-        <ul>
-          <li>25/03 - Multiple Choice - Programación estructurada</li>
-          <li>25/03 - Guía de preguntas - Algoritmos elementales</li>
-        </ul>
-        <h4>UVA 3 - Variables Simples</h4>
-        <ul>
-          <li>08/04 - Multiple Choice - Variables Simples, expresiones y tipos de dato</li>
-          <li>08/04 - Guía de preguntas - Variables</li>
-        </ul>
-        <h4>UVA 4 - Estructuras de Control</h4>
-        <ul>
-          <li>29/04 - Multiple Choice - Estructuras de Control</li>
-          <li>29/04 - Actividad Práctica - Estructura Condicional</li>
-          <li>29/04 - Ejercitación individual: diseño de algoritmos</li>
-          <li>29/04 - Guía de preguntas - Estructura condicional e iterativa</li>
-        </ul>
-      </div>
-
-      <div class="materia">
-        <h3>Arquitectura de Computadores</h3>
-        <h4>UVA 2 - Evolución histórica</h4>
-        <ul>
-          <li>19/03 - Ejercicio individual - Historia de los microprocesadores</li>
-        </ul>
-        <h4>UVA 3 - Sistemas de numeración y códigos</h4>
-        <ul>
-          <li>02/04 - Ejercicio individual - Representación de datos en una computadora </li>
-        </ul>
-        <h4>UVA 4 - Logica Combinacional - Unidad Aritmético-lógica</h4>
-        <ul>
-          <li>15/04 - Ejercicio individual - Cálculo de circuitos lógicos </li>
-        </ul>
-      </div>
-    </section>
+    </div>
   </main>
 
   <!-- Pie de página -->
