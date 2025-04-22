@@ -95,50 +95,48 @@ p {
 
 /* === TABLAS === */
 .tabla-scroll {
-  overflow-x: auto;
   width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
 
-.tabla-scroll table {
-  min-width: 480px;
-}
-
-table {
+.tabla-cuadricula {
+  min-width: 500px;
   width: 100%;
   border-collapse: collapse;
-  margin-top: 40px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   table-layout: auto;
 }
 
-th, td {
-  padding: 20px;
+.tabla-cuadricula th,
+.tabla-cuadricula td {
+  padding: 16px;
   font-size: 16px;
+  white-space: nowrap;
   text-align: center;
   border-bottom: 1px solid #e5e7eb;
-
 }
 
-th {
+.tabla-cuadricula th {
   background-color: #eeeef8;
   font-weight: 600;
   text-transform: uppercase;
-  
 }
 
-tr:nth-child(even) {
+.tabla-cuadricula tr:nth-child(even) {
   background-color: #ffffff;
-  
 }
 
-tr:hover {
+.tabla-cuadricula tr:hover {
   background-color: #e2dbf3;
 }
 
-td:first-child {
+.tabla-cuadricula td:first-child {
   font-weight: 500;
 }
 
@@ -311,7 +309,7 @@ footer {
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   body {
-    padding: 0 0px 60px;
+    padding: 0 16px 40px;
   }
 
   h1 {
@@ -321,10 +319,11 @@ footer {
 
   h2 {
     font-size: 24px;
+    text-align: center;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   p {
@@ -333,6 +332,7 @@ footer {
 
   .botonera {
     position: static;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -341,13 +341,22 @@ footer {
     box-shadow: none;
   }
 
+  .botonera.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
   .sobre_mi-container {
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
   }
 
   .sobre_mi-texto {
-    text-align: left;
+    width: 100%;
   }
 
   .cuadro {
@@ -360,36 +369,53 @@ footer {
     display: block;
   }
 
-  footer {
-    position: static;
-    padding: 15px 10px;
-    font-size: 12px;
-    width: 100%;
-  }
-
   .tabla-scroll {
     max-width: 100%;
+    overflow-x: auto;
   }
 
-  table {
-    display: block;
-    overflow-x: auto;
+  .tabla-cuadricula {
+    min-width: 100%;
+  }
+
+  .tabla-cuadricula th,
+  .tabla-cuadricula td {
+    padding: 10px 12px;
+    font-size: 14px;
     white-space: nowrap;
   }
 
-  th, td {
-    font-size: 14px;
+  footer {
+    position: static;
     padding: 10px;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-link {
+    font-size: 10px;
+    margin: 4px;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 0 12px 30px;
+  }
+
   h1 {
     font-size: 28px;
+    text-align: center;
   }
 
   h2 {
     font-size: 20px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 16px;
   }
 
   p {
@@ -400,13 +426,21 @@ footer {
     gap: 8px;
   }
 
+  .tabla-cuadricula th,
+  .tabla-cuadricula td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
   footer {
-font-size: 4px;
-}
+    font-size: 9px;
+    padding: 8px;
+  }
 
   .footer-link {
     display: block;
     margin: 6px 0;
+    font-size: 9px;
   }
 }
 
@@ -421,24 +455,5 @@ font-size: 4px;
   z-index: 1100;
   position: fixed;
   top: 16px;
-  right: 16px; 
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .botonera {
-    display: none;
-  }
-
-  .botonera.show {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #2c2b4e;
-    gap: 10px;
-    padding: 10px 0;
-  }
+  right: 16px;
 }
