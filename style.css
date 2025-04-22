@@ -329,7 +329,6 @@ footer {
     font-size: 18px;
   }
 
-  /* 🔧 BOTONERA ajustada para móvil */
   .botonera {
     position: static;
     flex-direction: column;
@@ -359,7 +358,6 @@ footer {
     display: block;
   }
 
-  /* ✅ Footer fijo pasa a estático */
   footer {
     position: static;
     padding: 20px;
