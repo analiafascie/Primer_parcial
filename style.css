@@ -306,6 +306,7 @@ footer {
 }
 
 /* === RESPONSIVE === */
+
 @media (max-width: 768px) {
   body {
     padding: 0 20px 80px;
@@ -313,6 +314,7 @@ footer {
 
   h1 {
     font-size: 42px;
+    text-align: center;
   }
 
   h2 {
@@ -323,9 +325,15 @@ footer {
     font-size: 16px;
   }
 
+  p {
+    font-size: 18px;
+  }
+
   .botonera {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+    text-align: center;
   }
 
   .sobre_mi-container {
@@ -339,5 +347,47 @@ footer {
 
   .cuadro {
     margin-top: 16px;
+  }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Tablas con scroll horizontal */
+  .tabla-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .botonera {
+    gap: 8px;
+  }
+
+  .footer-link {
+    display: block;
+    margin: 6px 0;
   }
 }
