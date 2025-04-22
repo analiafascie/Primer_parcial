@@ -14,11 +14,13 @@
 
   <title>Home</title>
 </head>
-
 <body>
 
+  <!-- Ícono menú hamburguesa -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
   <!-- Navegación -->
-  <nav class="botonera">
+  <nav class="botonera" id="menu">
     <a href="index.html" class="boton">home</a>
     <a href="avisos.html" class="boton">avisos</a>
     <a href="sobremi.html" class="boton">sobre mí</a>
@@ -32,14 +34,17 @@
   </header>
 
   <!-- Contenido principal -->
-  <main>
-    <div class="contenedor-cubos">
+<main>
+  <div class="contenedor-cubos">
+    <div class="cubo grande">
+      <h2>Materias en curso</h2>
+      <p>
+        Durante el primer trimestre de 2025, se cursan las siguientes asignaturas, cada una con su correspondiente día, horario y modalidad. 
+        Estas asignaturas forman parte del trayecto académico establecido y contribuyen al desarrollo de competencias fundamentales.
+      </p>
 
-      <!-- Caja única centrada -->
-      <div class="cubo grande">
-        <h2>Materias en curso</h2>
-        <p>Durante el primer trimestre de 2025, se cursan las siguientes asignaturas, cada una con su correspondiente día, horario y modalidad. 
-          Estas asignaturas forman parte del trayecto académico establecido y contribuyen al desarrollo de competencias fundamentales.</p>
+      <!-- Envoltura para hacerla scrollable -->
+      <div class="tabla-scroll">
         <table class="tabla-cuadricula">
           <thead>
             <tr>
@@ -69,7 +74,9 @@
       </div>
 
     </div>
-  </main>
+  </div>
+</main>
+
 
   <!-- Pie de página -->
   <footer>
@@ -77,6 +84,14 @@
     ➡️<a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
     ➡️<a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
   </footer>
+
+  <!-- Script para el menú -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>

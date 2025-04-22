@@ -16,12 +16,13 @@
 </head>
 
 <body>
-
+ <!-- Ícono menú hamburguesa -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <!-- Navegación -->
-  <nav class="botonera">
+  <nav class="botonera" id="menu">
     <a href="index.html" class="boton">home</a>
     <a href="avisos.html" class="boton">avisos</a>
-    <a href="sobremi.html" class="boton active">sobre mí</a>
+    <a href="sobremi.html" class="boton">sobre mí</a>
     <a href="materias2025.html" class="boton">materias 2025</a>
     <a href="contacto.html" class="boton">contacto</a>
   </nav>
@@ -62,6 +63,11 @@
     ➡️<a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
     ➡️<a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
   </footer>
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
