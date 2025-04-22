@@ -329,11 +329,15 @@ footer {
     font-size: 18px;
   }
 
+  /* 🔧 BOTONERA ajustada para móvil */
   .botonera {
+    position: static;
     flex-direction: column;
     gap: 10px;
     align-items: center;
     text-align: center;
+    padding: 10px 0;
+    box-shadow: none;
   }
 
   .sobre_mi-container {
@@ -349,11 +353,17 @@ footer {
     margin-top: 16px;
   }
 
-
   img {
     max-width: 100%;
     height: auto;
     display: block;
+  }
+
+  /* ✅ Footer fijo pasa a estático */
+  footer {
+    position: static;
+    padding: 20px;
+    font-size: 12px;
   }
 
   /* Tablas con scroll horizontal */
