@@ -5,7 +5,7 @@
 
 /* === BASE GENERAL === */
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair", serif;
   margin: 0;
   padding: 0 40px 80px;
   background-color: #ffffff;
@@ -86,6 +86,13 @@ h4 {
   font-weight: 400;
   margin-bottom: 30px;
 }
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
 
 /* === TABLAS === */
 table {
@@ -257,7 +264,7 @@ input[type="submit"]:hover {
   background-color: #2c2b4e;
 }
 
-/* === DECORATIVO (opcional) === */
+/* === DECORATIVO === */
 .cuadro {
   width: 100px;
   height: 100px;
