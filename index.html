@@ -28,63 +28,63 @@
     <a href="contacto.html" class="boton">contacto</a>
   </nav>
 
-  <!-- Encabezado principal -->
-  <header>
-    <h1>Home</h1>
-  </header>
+  <!-- Envoltura general para aplicar sticky footer -->
+  <div class="main">
+    <!-- Encabezado principal -->
+    <header>
+      <h1>Home</h1>
+    </header>
 
-  <!-- Contenido principal -->
-<main>
-  <div class="contenedor-cubos">
-    <div class="cubo grande">
-      <h2>Materias en curso</h2>
-      <p>
-        Durante el primer trimestre de 2025, se cursan las siguientes asignaturas, cada una con su correspondiente día, horario y modalidad. 
-        Estas asignaturas forman parte del trayecto académico establecido y contribuyen al desarrollo de competencias fundamentales.
-      </p>
+    <!-- Contenido principal -->
+    <main class="content">
+      <div class="contenedor-cubos">
+        <div class="cubo grande">
+          <h2>Materias en curso</h2>
+          <p>
+            Durante el primer trimestre de 2025, se cursan las siguientes asignaturas, cada una con su correspondiente día, horario y modalidad. 
+            Estas asignaturas forman parte del trayecto académico establecido y contribuyen al desarrollo de competencias fundamentales.
+          </p>
 
-      <!-- Envoltura para hacerla scrollable -->
-      <div class="tabla-scroll">
-        <table class="tabla-cuadricula">
-          <thead>
-            <tr>
-              <th>Materia</th>
-              <th>Día y horario</th>
-              <th>Modalidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Diseño y Desarrollo Web</td>
-              <td>Lunes 18:30</td>
-              <td>Virtual - Teams</td>
-            </tr>
-            <tr>
-              <td>Introducción a la Informática</td>
-              <td>Martes 18:30</td>
-              <td>Virtual - Teams</td>
-            </tr>
-            <tr>
-              <td>Arquitectura de Computadores</td>
-              <td>Miércoles 18:30</td>
-              <td>Virtual - Teams</td>
-            </tr>
-          </tbody>
-        </table>
+          <!-- Envoltura para hacerla scrollable -->
+          <div class="tabla-scroll">
+            <table class="tabla-cuadricula">
+              <thead>
+                <tr>
+                  <th>Materia</th>
+                  <th>Día y horario</th>
+                  <th>Modalidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diseño y Desarrollo Web</td>
+                  <td>Lunes 18:30</td>
+                  <td>Virtual - Teams</td>
+                </tr>
+                <tr>
+                  <td>Introducción a la Informática</td>
+                  <td>Martes 18:30</td>
+                  <td>Virtual - Teams</td>
+                </tr>
+                <tr>
+                  <td>Arquitectura de Computadores</td>
+                  <td>Miércoles 18:30</td>
+                  <td>Virtual - Teams</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
+    </main>
 
-    </div>
+    <!-- Pie de página -->
+    <footer>
+      Curso 521046 || Profesora Patricia Litovicius
+      ➡️<a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
+      ➡️<a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
+    </footer>
   </div>
-</main>
-
-
-  <!-- Pie de página -->
-  <footer>
-    Curso 521046 || Profesora Patricia Litovicius
-    ➡️<a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
-    ➡️<a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
-  </footer>
-
   <!-- Script para el menú -->
   <script>
     function toggleMenu() {
@@ -92,6 +92,5 @@
       menu.classList.toggle("show");
     }
   </script>
-
 </body>
 </html>
