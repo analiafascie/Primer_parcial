@@ -292,9 +292,8 @@ input[type="submit"]:hover {
 
 /* === FOOTER === */
 footer {
-  position: static;
+  position: fixed;
   width: 100%;
-  max-width: 100%;
   padding: 10px;
   background-color: #2c2b4e;
   font-family: 'Cutive Mono', monospace;
