@@ -376,14 +376,15 @@ footer {
   }
 
   table {
-    display: block;
     overflow-x: auto;
+    border-collapse: collapse;
     white-space: nowrap;
   }
 
   th, td {
     font-size: 14px;
     padding: 12px;
+    white-space: nowrap;
   }
 }
 
