@@ -311,7 +311,7 @@ footer {
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   body {
-    padding: 0 10px 60px;
+    padding: 0 0px 60px;
   }
 
   h1 {
