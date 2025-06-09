@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark-blue': '#2c2b4e',
+            'light-lavender': '#e2dbf3',
+            'light-gray-bg': '#fafafa',
+            'border-gray': '#e5e7eb',
+            'table-header': '#eeeef8',
+            'dark-green': '#2b4e34',
+          },
+          fontFamily: {
+            playfair: ['Playfair', 'serif'],
+            'cutive-mono': ['"Cutive Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <title>Contacto</title>
+</head>
+
+<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col">
+  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10"></div>
+
+ <div class="md:hidden fixed top-4 right-4 text-3xl text-white bg-dark-blue p-2 cursor-pointer z-50" onclick="toggleMenu()">☰</div>
+ <nav id="menu" class="fixed top-0 left-0 w-full flex-col md:flex-row justify-center items-center md:flex gap-4 md:gap-10 bg-dark-blue py-2 md:py-4 z-40 shadow-md md:shadow-lg hidden">
+   <a href="index.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">home</a>
+   <a href="avisos.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">avisos</a>
+   <a href="sobremi.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">sobre mí</a>
+   <a href="materias2025.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">materias 2025</a>
+   <a href="contacto.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">contacto</a>
+ </nav>
+
+<div class="flex-grow max-w-[1400px] mx-auto w-full px-4 md:px-0 pt-24 md:pt-32 pb-8 md:pb-16"> 
+    <header class="mb-8">
+      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left">Contactame</h1>
+    </header>
+
+    <main>
+      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8">
+          <form id="contactForm" class="flex flex-col gap-4">
+              <div class="flex flex-col">
+                  <label for="fname" class="text-sm text-dark-blue mb-1">Nombre</label>
+                  <input type="text" id="fname" name="fname" placeholder="Escribí tu nombre" 
+                         class="w-full p-2 border border-border-gray rounded-md text-base font-playfair text-dark-blue 
+                                focus:border-indigo-600 outline-none transition duration-200 ease-in-out 
+                                invalid:border-red-500 invalid:text-red-600 focus:invalid:border-red-500">
+              </div>
+
+              <div class="flex flex-col">
+                <label for="email" class="text-sm text-dark-blue mb-1">Correo Electrónico</label>
+                <input type="text" id="email" name="email" placeholder="Escribí tu correo electrónico" 
+                       class="w-full p-2 border border-border-gray rounded-md text-base font-playfair text-dark-blue 
+                              focus:border-indigo-600 outline-none transition duration-200 ease-in-out 
+                              invalid:border-red-500 invalid:text-red-600 focus:invalid:border-red-500">
+              </div>
+
+              <div class="flex flex-col">
+                <label for="subject" class="text-sm text-dark-blue mb-1">Asunto</label>
+                <input type="text" id="subject" name="subject" placeholder="Escribí el asunto por el cual te contactás"               
+                       class="w-full p-2 border border-border-gray rounded-md text-base font-playfair text-dark-blue 
+                              focus:border-indigo-600 outline-none transition duration-200 ease-in-out 
+                              invalid:border-red-500 invalid:text-red-600 focus:invalid:border-red-500">
+            </div>
+
+              <div class="flex flex-col">
+                  <label for="message" class="text-sm text-dark-blue mb-1">Mensaje</label>
+                  <textarea id="message" name="message" rows="6" placeholder="Escribí tu mensaje aquí" 
+                            class="w-full p-2 border border-border-gray rounded-md text-base font-playfair text-dark-blue 
+                                   focus:border-indigo-600 outline-none transition duration-200 ease-in-out 
+                                   invalid:border-red-500 invalid:text-red-600 focus:invalid:border-red-500"></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn" 
+                      class="bg-dark-blue text-white p-3 border-none rounded-md text-base font-playfair cursor-pointer 
+                             transition duration-300 hover:bg-gray-700">Enviar</button>
+          </form>
+          <div id="formMessages" class="mt-4 p-3 rounded-md text-sm hidden" role="alert"></div>
+      </section>
+    </main>
+</div> <footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md">
+    Curso 521046 || Profesora Patricia Litovicius
+    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️UADE</a>
+    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️Webcampus</a>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("hidden"); 
+      menu.classList.toggle("flex"); 
+    }
+
+    // JavaScript para validación de formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessages = document.getElementById('formMessages');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío por defecto del formulario
+            
+            formMessages.classList.add('hidden'); // Ocultar mensajes anteriores
+            formMessages.classList.remove('bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+            formMessages.innerHTML = ''; // Limpiar contenido anterior
+
+            const name = document.getElementById('fname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let errors = [];
+
+            // Validación de campos vacíos
+            if (name === '') {
+                errors.push('El campo Nombre es obligatorio.');
+            }
+            if (email === '') {
+                errors.push('El campo Correo Electrónico es obligatorio.');
+            }
+            if (subject === '') {
+                errors.push('El campo Asunto es obligatorio.');
+            }
+            if (message === '') {
+                errors.push('El campo Mensaje es obligatorio.');
+            }
+
+            // Validación de formato de email (simple)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email !== '' && !emailRegex.test(email)) {
+                errors.push('Por favor, ingresa un Correo Electrónico válido.');
+            }
+
+            if (errors.length > 0) {
+                // Mostrar mensajes de error
+                formMessages.classList.remove('hidden');
+                formMessages.classList.add('bg-red-100', 'text-red-800');
+                formMessages.innerHTML = '<ul>' + errors.map(error => '<li>' + error + '</li>').join('') + '</ul>';
+                
+                // Marcar inputs con error visualmente (Tailwind invalid: pseudo-clase)
+                document.getElementById('fname').classList.toggle('invalid:border-red-500', name === '');
+                document.getElementById('email').classList.toggle('invalid:border-red-500', email === '' || !emailRegex.test(email));
+                document.getElementById('subject').classList.toggle('invalid:border-red-500', subject === '');
+                document.getElementById('message').classList.toggle('invalid:border-red-500', message === '');
+
+            } else {
+                // Validación exitosa
+                formMessages.classList.remove('hidden');
+                formMessages.classList.add('bg-green-100', 'text-green-800');
+                formMessages.innerHTML = `Gracias por tu contacto, ${name}. En breve te estaré respondiendo.`;
+                
+                // Limpiar formulario
+                form.reset();
+                // Ocultar cualquier borde de error de validación previa
+                document.getElementById('fname').classList.remove('invalid:border-red-500');
+                document.getElementById('email').classList.remove('invalid:border-red-500');
+                document.getElementById('subject').classList.remove('invalid:border-red-500');
+                document.getElementById('message').classList.remove('invalid:border-red-500');
+            }
+        });
+    });
+  </script>
+</body>
+</html>
