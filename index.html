@@ -11,6 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -20,6 +21,12 @@
             'border-gray': '#e5e7eb',
             'table-header': '#eeeef8',
             'dark-green': '#2b4e34',
+            'dark-mode-bg': '#1a1a2e',
+            'dark-mode-text': '#e0e0e0',
+            'dark-mode-card-bg': '#2a2a4a',
+            'dark-mode-border': '#4a4a6e',
+            'dark-mode-table-header': '#3a3a5a',
+            'dark-mode-hover': '#4a4a7a',
           },
           fontFamily: {
             playfair: ['Playfair', 'serif'],
@@ -32,8 +39,10 @@
 
   <title>Home</title>
 </head>
-<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col">
-  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10"></div>
+<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col
+             dark:bg-dark-mode-bg dark:text-dark-mode-text">
+
+  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10 dark:bg-dark-mode-bg dark:bg-opacity-85"></div>
 
   <div class="md:hidden fixed top-4 right-4 text-3xl text-white bg-dark-blue p-2 cursor-pointer z-50" onclick="toggleMenu()">☰</div>
 
@@ -43,62 +52,106 @@
     <a href="sobremi.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">sobre mí</a>
     <a href="materias2025.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">materias 2025</a>
     <a href="contacto.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">contacto</a>
+
+    <button id="lightModeBtn" class="bg-white text-dark-blue text-xs font-semibold py-1 px-3 rounded-full transition-colors duration-300 hover:bg-light-lavender ml-4">Claro</button>
+    <button id="darkModeBtn" class="bg-dark-blue text-white border border-white text-xs font-semibold py-1 px-3 rounded-full transition-colors duration-300 hover:bg-light-lavender hover:text-dark-blue">Oscuro</button>
   </nav>
 
 <div class="flex-grow max-w-[1400px] mx-auto w-full px-4 md:px-0 pt-24 md:pt-32 pb-8 md:pb-16">
     <header class="mb-8">
-      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left">Home</h1>
+      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left dark:text-white">Home</h1>
     </header>
 
     <main>
-      <h2 class="text-3xl md:text-4xl font-normal mb-2 text-left">Materias en curso</h2>
-      <p class="text-lg md:text-xl font-normal mb-6 text-left">
+      <h2 class="text-3xl md:text-4xl font-normal mb-2 text-left dark:text-white">Materias en curso</h2>
+      <p class="text-lg md:text-xl font-normal mb-6 text-left dark:text-dark-mode-text">
         Durante el primer trimestre de 2025, se cursan las siguientes asignaturas, cada una con su correspondiente día, horario y modalidad. 
         Estas asignaturas forman parte del trayecto académico establecido y contribuyen al desarrollo de competencias fundamentales.
       </p>
 
-      <div class="bg-light-gray-bg p-6 rounded-lg shadow-md overflow-hidden">
+      <div class="bg-light-gray-bg p-6 rounded-lg shadow-md overflow-hidden dark:bg-dark-mode-card-bg dark:shadow-lg">
         <div class="overflow-x-auto w-full mt-4 pb-2">
-          <table class="min-w-full bg-white rounded-lg shadow-sm border-collapse">
+          <table class="min-w-full bg-white rounded-lg shadow-sm border-collapse dark:bg-dark-mode-card-bg">
             <thead>
               <tr>
-                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray bg-table-header font-semibold uppercase">Materia</th>
-                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray bg-table-header font-semibold uppercase">Día y horario</th>
-                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray bg-table-header font-semibold uppercase">Modalidad</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray bg-table-header font-semibold uppercase
+                           dark:border-dark-mode-border dark:bg-dark-mode-table-header dark:text-dark-mode-text">Materia</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray bg-table-header font-semibold uppercase
+                           dark:border-dark-mode-border dark:bg-dark-mode-table-header dark:text-dark-mode-text">Día y horario</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray bg-table-header font-semibold uppercase
+                           dark:border-dark-mode-border dark:bg-dark-mode-table-header dark:text-dark-mode-text">Modalidad</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="even:bg-white hover:bg-light-lavender">
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray font-medium">Diseño y Desarrollo Web</td>
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray">Lunes 18:30</td>
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray">Virtual - Teams</td>
+              <tr class="even:bg-white hover:bg-light-lavender dark:even:bg-dark-mode-card-bg dark:hover:bg-dark-mode-hover">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray font-medium dark:border-dark-mode-border dark:text-dark-mode-text">Diseño y Desarrollo Web</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray dark:border-dark-mode-border dark:text-dark-mode-text">Lunes 18:30</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray dark:border-dark-mode-border dark:text-dark-mode-text">Virtual - Teams</td>
               </tr>
-              <tr class="even:bg-white hover:bg-light-lavender">
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray font-medium">Introducción a la Informática</td>
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray">Martes 18:30</td>
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray">Virtual - Teams</td>
+              <tr class="even:bg-white hover:bg-light-lavender dark:even:bg-dark-mode-card-bg dark:hover:bg-dark-mode-hover">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray font-medium dark:border-dark-mode-border dark:text-dark-mode-text">Introducción a la Informática</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray dark:border-dark-mode-border dark:text-dark-mode-text">Martes 18:30</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray dark:border-dark-mode-border dark:text-dark-mode-text">Virtual - Teams</td>
               </tr>
-              <tr class="even:bg-white hover:bg-light-lavender">
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray font-medium">Arquitectura de Computadores</td>
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray">Miércoles 18:30</td>
-                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray">Virtual - Teams</td>
+              <tr class="even:bg-white hover:bg-light-lavender dark:even:bg-dark-mode-card-bg dark:hover:bg-dark-mode-hover">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray font-medium dark:border-dark-mode-border dark:text-dark-mode-text">Arquitectura de Computadores</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray dark:border-dark-mode-border dark:text-dark-mode-text">Miércoles 18:30</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-center border-b border-border-gray dark:border-dark-mode-border dark:text-dark-mode-text">Virtual - Teams</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </main>
-</div> <footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md">
+</div>
+<footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md
+               dark:bg-dark-mode-card-bg dark:text-dark-mode-text">
     Curso 521046 || Profesora Patricia Litovicius
-    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️UADE</a>
-    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️Webcampus</a>
-  </footer>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("hidden"); 
-      menu.classList.toggle("flex"); 
+    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600 dark:hover:text-light-lavender">➡️UADE</a>
+    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600 dark:hover:text-light-lavender">➡️Webcampus</a>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+  }
+
+  const lightModeBtn = document.getElementById('lightModeBtn');
+  const darkModeBtn = document.getElementById('darkModeBtn');
+  const body = document.body;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-  </script>
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+
+  if (lightModeBtn) {
+    lightModeBtn.addEventListener('click', () => {
+      applyTheme('light');
+    });
+  }
+
+  if (darkModeBtn) {
+    darkModeBtn.addEventListener('click', () => {
+      applyTheme('dark');
+    });
+  }
+</script>
 </body>
 </html>

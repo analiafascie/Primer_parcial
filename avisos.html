@@ -11,6 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -20,6 +21,12 @@
             'border-gray': '#e5e7eb',
             'table-header': '#eeeef8',
             'dark-green': '#2b4e34',
+            'dark-mode-bg': '#1a1a2e',
+            'dark-mode-text': '#e0e0e0',
+            'dark-mode-card-bg': '#2a2a4a',
+            'dark-mode-border': '#4a4a6e',
+            'dark-mode-table-header': '#3a3a5a',
+            'dark-mode-hover': '#4a4a7a',
           },
           fontFamily: {
             playfair: ['Playfair', 'serif'],
@@ -33,8 +40,9 @@
   <title>Avisos</title>
 </head>
 
-<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col">
-  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10"></div>
+<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col
+             dark:bg-dark-mode-bg dark:text-dark-mode-text">
+  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10 dark:bg-dark-mode-bg dark:bg-opacity-85"></div>
 
   <div class="md:hidden fixed top-4 right-4 text-3xl text-white bg-dark-blue p-2 cursor-pointer z-50" onclick="toggleMenu()">☰</div>
 
@@ -44,80 +52,120 @@
     <a href="sobremi.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">sobre mí</a>
     <a href="materias2025.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">materias 2025</a>
     <a href="contacto.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">contacto</a>
+    <button id="lightModeBtn" class="bg-white text-dark-blue text-xs font-semibold py-1 px-3 rounded-full transition-colors duration-300 hover:bg-light-lavender ml-4">Claro</button>
+    <button id="darkModeBtn" class="bg-dark-blue text-white border border-white text-xs font-semibold py-1 px-3 rounded-full transition-colors duration-300 hover:bg-light-lavender hover:text-dark-blue">Oscuro</button>
   </nav>
 
-<div class="flex-grow max-w-[1400px] mx-auto w-full px-4 md:px-0 pt-24 md:pt-32 pb-8 md:pb-16">    <header class="mb-8">
-      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left">Avisos</h1>
+<div class="flex-grow max-w-[1400px] mx-auto w-full px-4 md:px-0 pt-24 md:pt-32 pb-8 md:pb-16">
+    <header class="mb-8">
+      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left dark:text-white">Avisos</h1>
     </header>
-    <h2 class="text-3xl md:text-4xl font-normal mb-2 text-left">Tareas Pendientes</h2>
-    <p class="text-lg md:text-xl font-normal mb-6 text-left">En esta sección se detallan las actividades y entregas correspondientes a cada asignatura, con sus respectivas fechas y requerimientos.
+    <h2 class="text-3xl md:text-4xl font-normal mb-2 text-left dark:text-white">Tareas Pendientes</h2>
+    <p class="text-lg md:text-xl font-normal mb-6 text-left dark:text-dark-mode-text">En esta sección se detallan las actividades y entregas correspondientes a cada asignatura, con sus respectivas fechas y requerimientos.
       Es importante realizar un seguimiento continuo de estas tareas para cumplir con los objetivos académicos establecidos. La organización y la planificación son fundamentales para mantener el ritmo de cursada propuesto por UADE.</p>
     <main>
-      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8">
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Diseño y Desarrollo Web</h3>
-          <h4 class="text-lg md:text-xl font-normal mb-2">UVA 1 - Introducción al desarrollo web</h4>
+      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8 dark:bg-dark-mode-card-bg dark:shadow-lg">
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Diseño y Desarrollo Web</h3>
+          <h4 class="text-lg md:text-xl font-normal mb-2 dark:text-white">UVA 1 - Introducción al desarrollo web</h4>
           <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">10/03 - <a href="https://analiafascie.github.io/actividad1/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Sobre Mí </a></li>        
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">17/03 - <a href="https://analiafascie.github.io/actividad2.v2/" target="_blank" class="text-dark-blue hover:underline">Ejercicio HTML Etiquetas</a></li>  
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">31/03 - <a href="https://analiafascie.github.io/actividad3/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Integrador</a></li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">10/03 - <a href="https://analiafascie.github.io/actividad1/" target="_blank" class="text-dark-blue hover:underline dark:text-dark-mode-text">Ejercicio Sobre Mí </a></li>        
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">17/03 - <a href="https://analiafascie.github.io/actividad2.v2/" target="_blank" class="text-dark-blue hover:underline dark:text-dark-mode-text">Ejercicio HTML Etiquetas</a></li>  
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">31/03 - <a href="https://analiafascie.github.io/actividad3/" target="_blank" class="text-dark-blue hover:underline dark:text-dark-mode-text">Ejercicio Integrador</a></li>
           </ul>
-          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 2 - Diseño de interfaz y Experiencia de Usuario</h4>
+          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2 dark:text-white">UVA 2 - Diseño de interfaz y Experiencia de Usuario</h4>
           <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">07/04 - <a href="https://analiafascie.github.io/actividad4/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Formato de Texto</a></li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">07/04 - <a href="https://analiafascie.github.io/actividad5/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Formato de Cajas</a></li>
-          </ul>
-        </div>
-
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Introducción a la Informática</h3>
-          <h4 class="text-lg md:text-xl font-normal mb-2">UVA 2 - Programación Estructurada</h4>
-          <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">25/03 - Multiple Choice - Programación estructurada</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">25/03 - Guía de preguntas - Algoritmos elementales</li>
-          </ul>
-          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 3 - Variables Simples</h4>
-          <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">08/04 - Multiple Choice - Variables Simples, expresiones y tipos de dato</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">08/04 - Guía de preguntas - Variables</li>
-          </ul>
-          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 4 - Estructuras de Control</h4>
-          <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">29/04 - Multiple Choice - Estructuras de Control</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">29/04 - Actividad Práctica - Estructura Condicional</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">29/04 - Ejercitación individual: diseño de algoritmos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">29/04 - Guía de preguntas - Estructura condicional e iterativa</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">07/04 - <a href="https://analiafascie.github.io/actividad4/" target="_blank" class="text-dark-blue hover:underline dark:text-dark-mode-text">Ejercicio Formato de Texto</a></li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">07/04 - <a href="https://analiafascie.github.io/actividad5/" target="_blank" class="text-dark-blue hover:underline dark:text-dark-mode-text">Ejercicio Formato de Cajas</a></li>
           </ul>
         </div>
 
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Arquitectura de Computadores</h3>
-          <h4 class="text-lg md:text-xl font-normal mb-2">UVA 2 - Evolución histórica</h4>
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Introducción a la Informática</h3>
+          <h4 class="text-lg md:text-xl font-normal mb-2 dark:text-white">UVA 2 - Programación Estructurada</h4>
           <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">19/03 - Ejercicio individual - Historia de los microprocesadores</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">25/03 - Multiple Choice - Programación estructurada</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">25/03 - Guía de preguntas - Algoritmos elementales</li>
           </ul>
-          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 3 - Sistemas de numeración y códigos</h4>
+          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2 dark:text-white">UVA 3 - Variables Simples</h4>
           <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">02/04 - Ejercicio individual - Representación de datos en una computadora </li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">08/04 - Multiple Choice - Variables Simples, expresiones y tipos de dato</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">08/04 - Guía de preguntas - Variables</li>
           </ul>
-          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 4 - Logica Combinacional - Unidad Aritmético-lógica</h4>
+          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2 dark:text-white">UVA 4 - Estructuras de Control</h4>
           <ul class="list-disc pl-5">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out">15/04 - Ejercicio individual - Cálculo de circuitos lógicos </li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">29/04 - Multiple Choice - Estructuras de Control</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">29/04 - Actividad Práctica - Estructura Condicional</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">29/04 - Ejercitación individual: diseño de algoritmos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">29/04 - Guía de preguntas - Estructura condicional e iterativa</li>
+          </ul>
+        </div>
+
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Arquitectura de Computadores</h3>
+          <h4 class="text-lg md:text-xl font-normal mb-2 dark:text-white">UVA 2 - Evolución histórica</h4>
+          <ul class="list-disc pl-5">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">19/03 - Ejercicio individual - Historia de los microprocesadores</li>
+          </ul>
+          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2 dark:text-white">UVA 3 - Sistemas de numeración y códigos</h4>
+          <ul class="list-disc pl-5">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">02/04 - Ejercicio individual - Representación de datos en una computadora </li>
+          </ul>
+          <h4 class="text-lg md:text-xl font-normal mt-4 mb-2 dark:text-white">UVA 4 - Logica Combinacional - Unidad Aritmético-lógica</h4>
+          <ul class="list-disc pl-5">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 hover:bg-light-lavender cursor-pointer rounded-md px-2 transition duration-200 ease-in-out dark:border-dark-mode-border dark:hover:bg-dark-mode-hover dark:text-dark-mode-text">15/04 - Ejercicio individual - Cálculo de circuitos lógicos </li>
           </ul>
         </div>
       </section>
     </main>
-</div> <footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md">
+</div>
+<footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md
+               dark:bg-dark-mode-card-bg dark:text-dark-mode-text">
     Curso 521046 || Profesora Patricia Litovicius
-    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️UADE</a>
-    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️Webcampus</a>
-  </footer>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("hidden");
-      menu.classList.toggle("flex");
+    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600 dark:hover:text-light-lavender">➡️UADE</a>
+    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600 dark:hover:text-light-lavender">➡️Webcampus</a>
+</footer>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+  }
+
+  const lightModeBtn = document.getElementById('lightModeBtn');
+  const darkModeBtn = document.getElementById('darkModeBtn');
+  const body = document.body;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-  </script>
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+
+  if (lightModeBtn) {
+    lightModeBtn.addEventListener('click', () => {
+      applyTheme('light');
+    });
+  }
+
+  if (darkModeBtn) {
+    darkModeBtn.addEventListener('click', () => {
+      applyTheme('dark');
+    });
+  }
+</script>
 </body>
 </html>

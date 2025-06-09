@@ -11,6 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -20,6 +21,12 @@
             'border-gray': '#e5e7eb',
             'table-header': '#eeeef8',
             'dark-green': '#2b4e34',
+            'dark-mode-bg': '#1a1a2e',
+            'dark-mode-text': '#e0e0e0',
+            'dark-mode-card-bg': '#2a2a4a',
+            'dark-mode-border': '#4a4a6e',
+            'dark-mode-table-header': '#3a3a5a',
+            'dark-mode-hover': '#4a4a7a',
           },
           fontFamily: {
             playfair: ['Playfair', 'serif'],
@@ -33,106 +40,146 @@
   <title>Materias</title>
 </head>
 
-<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col">
-  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10"></div>
+<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col
+             dark:bg-dark-mode-bg dark:text-dark-mode-text">
+  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10 dark:bg-dark-mode-bg dark:bg-opacity-85"></div>
 
- <div class="md:hidden fixed top-4 right-4 text-3xl text-white bg-dark-blue p-2 cursor-pointer z-50" onclick="toggleMenu()">☰</div>
- <nav id="menu" class="fixed top-0 left-0 w-full flex-col md:flex-row justify-center items-center md:flex gap-4 md:gap-10 bg-dark-blue py-2 md:py-4 z-40 shadow-md md:shadow-lg hidden">
-   <a href="index.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">home</a>
-   <a href="avisos.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">avisos</a>
-   <a href="sobremi.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">sobre mí</a>
-   <a href="materias2025.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">materias 2025</a>
-   <a href="contacto.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">contacto</a>
- </nav>
+  <div class="md:hidden fixed top-4 right-4 text-3xl text-white bg-dark-blue p-2 cursor-pointer z-50" onclick="toggleMenu()">☰</div>
+  <nav id="menu" class="fixed top-0 left-0 w-full flex-col md:flex-row justify-center items-center md:flex gap-4 md:gap-10 bg-dark-blue py-2 md:py-4 z-40 shadow-md md:shadow-lg hidden">
+    <a href="index.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">home</a>
+    <a href="avisos.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">avisos</a>
+    <a href="sobremi.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">sobre mí</a>
+    <a href="materias2025.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">materias 2025</a>
+    <a href="contacto.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">contacto</a>
+    <button id="lightModeBtn" class="bg-white text-dark-blue text-xs font-semibold py-1 px-3 rounded-full transition-colors duration-300 hover:bg-light-lavender ml-4">Claro</button>
+    <button id="darkModeBtn" class="bg-dark-blue text-white border border-white text-xs font-semibold py-1 px-3 rounded-full transition-colors duration-300 hover:bg-light-lavender hover:text-dark-blue">Oscuro</button>
+  </nav>
 
 <div class="flex-grow max-w-[1400px] mx-auto w-full px-4 md:px-0 pt-24 md:pt-32 pb-8 md:pb-16"> 
     <header class="mb-8">
-      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left">Materias</h1>
+      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left dark:text-white">Materias</h1>
     </header>
-    <h2 class="text-3xl md:text-4xl font-normal mb-2 text-left">Licenciatura en Gestión de Tecnología de la Información</h2>
-    <p class="text-lg md:text-xl font-normal mb-6 text-left">Listado de materias disponibles para cursar durante el ciclo lectivo 2025, organizada por cuatrimestre. Responde a los lineamientos curriculares establecidos por UADE para la formación integral en tecnología, gestión y sistemas de información.
+    <h2 class="text-3xl md:text-4xl font-normal mb-2 text-left dark:text-white">Licenciatura en Gestión de Tecnología de la Información</h2>
+    <p class="text-lg md:text-xl font-normal mb-6 text-left dark:text-dark-mode-text">Listado de materias disponibles para cursar durante el ciclo lectivo 2025, organizada por cuatrimestre. Responde a los lineamientos curriculares establecidos por UADE para la formación integral en tecnología, gestión y sistemas de información.
     </p>
     <main>
-      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8">
+      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8 dark:bg-dark-mode-card-bg dark:shadow-lg">
 
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Primer Año - Primer Cuatrimestre 2025</h3>
-          <ol class="list-decimal pl-5 text-dark-blue">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Introducción a la Algoritmia</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Sistemas de Información I</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Arquitectura de Computadores</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Marketing</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2"><a href="https://analiafascie.github.io/actividad2.v2/" target="_blank" class="text-dark-blue hover:underline"> Diseño y Desarrollo Web</a></li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Algoritmos y Estructuras de Datos I</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Sistemas de Información II</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Sistemas Operativos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Matemática Discreta</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Testing de Aplicaciones</li>
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Primer Año - Primer Cuatrimestre 2025</h3>
+          <ol class="list-decimal pl-5 text-dark-blue dark:text-dark-mode-text">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Introducción a la Algoritmia</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Sistemas de Información I</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Arquitectura de Computadores</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Marketing</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover"><a href="https://analiafascie.github.io/actividad2.v2/" target="_blank" class="text-dark-blue hover:underline dark:text-dark-mode-text"> Diseño y Desarrollo Web</a></li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Algoritmos y Estructuras de Datos I</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Sistemas de Información II</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Sistemas Operativos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Matemática Discreta</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Testing de Aplicaciones</li>
           </ol>
         </div>
 
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Segundo Año - Primer Cuatrimestre 2025</h3>
-          <ol class="list-decimal pl-5 text-dark-blue">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Algoritmos y Estructuras de Datos II</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Paradigma Orientado a Objetos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Redes de Datos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Fundamentos de Economía</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Gestión de Personas en Organizaciones de Tecnología</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Diseño y Análisis de Algoritmos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Dirección de Proyectos de Tecnología</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Ingeniería de Datos I</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Ingeniería de Software</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Liderazgo y Negociación</li>
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Segundo Año - Primer Cuatrimestre 2025</h3>
+          <ol class="list-decimal pl-5 text-dark-blue dark:text-dark-mode-text">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Algoritmos y Estructuras de Datos II</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Paradigma Orientado a Objetos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Redes de Datos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Fundamentos de Economía</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Gestión de Personas en Organizaciones de Tecnología</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Diseño y Análisis de Algoritmos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Dirección de Proyectos de Tecnología</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Ingeniería de Datos I</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Ingeniería de Software</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Liderazgo y Negociación</li>
           </ol>
         </div>
 
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Tercer Año - Primer Cuatrimestre 2025</h3>
-          <ol class="list-decimal pl-5 text-dark-blue">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Optativa I</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Aplicaciones Interactivas</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Proceso de Desarrollo de Software</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Seguridad e Integridad de la Información</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Probabilidad y Estadística</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Examen de Inglés</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Optativa II</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Seminario de Gestión de Tecnología</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Ingeniería de Datos II</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Evaluación de Proyectos de Tecnología</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Estadística Avanzada</li>
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Tercer Año - Primer Cuatrimestre 2025</h3>
+          <ol class="list-decimal pl-5 text-dark-blue dark:text-dark-mode-text">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Optativa I</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Aplicaciones Interactivas</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Proceso de Desarrollo de Software</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Seguridad e Integridad de la Información</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Probabilidad y Estadística</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Examen de Inglés</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Optativa II</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Seminario de Gestión de Tecnología</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Ingeniería de Datos II</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Evaluación de Proyectos de Tecnología</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Estadística Avanzada</li>
           </ol>
         </div>
 
-        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0">
-          <h3 class="text-2xl md:text-3xl font-normal mb-4">Cuarto Año - Primer Cuatrimestre 2025</h3>
-          <ol class="list-decimal pl-5 text-dark-blue">
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Optativa III</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Desarrollo de Aplicaciones I</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Seguridad de Procesos y Aplicaciones</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Ciencia de Datos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Tendencias Tecnológicas</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Optativa IV</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Desarrollo de Aplicaciones II</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Tecnología e Innovación</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Negocios Tecnológicos</li>
-            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2">Derecho Informático</li>
+        <div class="mb-6 pb-4 border-b border-border-gray last:border-b-0 dark:border-dark-mode-border">
+          <h3 class="text-2xl md:text-3xl font-normal mb-4 dark:text-white">Cuarto Año - Primer Cuatrimestre 2025</h3>
+          <ol class="list-decimal pl-5 text-dark-blue dark:text-dark-mode-text">
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Optativa III</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Desarrollo de Aplicaciones I</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Seguridad de Procesos y Aplicaciones</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Ciencia de Datos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Tendencias Tecnológicas</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Optativa IV</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Desarrollo de Aplicaciones II</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Tecnología e Innovación</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Negocios Tecnológicos</li>
+            <li class="text-base py-2 border-b border-gray-100 last:border-b-0 transition duration-200 ease-in-out hover:bg-light-lavender cursor-pointer rounded-md px-2 dark:border-dark-mode-border dark:hover:bg-dark-mode-hover">Derecho Informático</li>
           </ol>
         </div>
 
       </section>
     </main>
-</div> <footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md">
+</div>
+<footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md
+               dark:bg-dark-mode-card-bg dark:text-dark-mode-text">
     Curso 521046 || Profesora Patricia Litovicius
-    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️UADE</a>
-    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️Webcampus</a>
-  </footer>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("hidden");
-      menu.classList.toggle("flex");
+    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600 dark:hover:text-light-lavender">➡️UADE</a>
+    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600 dark:hover:text-light-lavender">➡️Webcampus</a>
+</footer>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+  }
+
+  const lightModeBtn = document.getElementById('lightModeBtn');
+  const darkModeBtn = document.getElementById('darkModeBtn');
+  const body = document.body;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-  </script>
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+
+  if (lightModeBtn) {
+    lightModeBtn.addEventListener('click', () => {
+      applyTheme('light');
+    });
+  }
+
+  if (darkModeBtn) {
+    darkModeBtn.addEventListener('click', () => {
+      applyTheme('dark');
+    });
+  }
+</script>
 </body>
 </html>
